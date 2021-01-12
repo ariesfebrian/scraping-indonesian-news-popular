@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+        {% for index in content_item %}
+          <div class="card card card-type-1">
+            <div class="wrapper clearfix">
+              {{ index.find('img')|safe }}
+              <a href="{{ index.find('a')['href'] }}">{{ index.find_all(attrs={'class': 'title'})[0].text|safe }}</a>
+            </div>
+          </div>
+        {% endfor %}
+{% endblock %}
